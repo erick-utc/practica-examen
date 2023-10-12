@@ -48,26 +48,53 @@ namespace PracticaExamen
             }
         }
 
-        public static void consultar()
+         static int buscar()
         {
-            Console.WriteLine("Digite la Cedular");
+            Console.WriteLine("Digite la Cedula");
             string cedula = Console.ReadLine();
             bool encontrado = false;
-            for(int i = 0;i < cantidad; i++)
+            int indiceEncontrado = -1;
+            for (int i = 0; i < cantidad; i++)
             {
                 if (cedula.Equals(cedulas[i]))
                 {
-                    Console.WriteLine($"Nombre: {nombres[i]}");
-                    Console.WriteLine($"Cedula: {cedulas[i]}");
-                    Console.WriteLine($"Nota: {notas[i]}");
+                    indiceEncontrado = i;
                     encontrado = true;
                     break;
                 }
             }
 
-            if ( !encontrado )
+            if (!encontrado)
             {
                 Console.WriteLine($"No se encontraron resultados para {cedula}");
+            }
+
+            return indiceEncontrado;
+        }
+
+        public static void consultar()
+        {
+            int indice = buscar();
+
+            if(indice >= 0)
+            {
+                Console.WriteLine($"Nombre: {nombres[indice]}");
+                Console.WriteLine($"Cedula: {cedulas[indice]}");
+                Console.WriteLine($"Nota: {notas[indice]}");
+            }
+        }
+
+        public static void modificar() {
+            int indice = buscar();
+
+            if (indice >= 0) 
+            {
+                Console.WriteLine($"Nombre Actual: {nombres[indice]}");
+                Console.Write("Digite Nuevo nombre");
+                nombres[indice] = Console.ReadLine();
+                Console.WriteLine($"Nota Actual: {notas[indice]}");
+                Console.Write("Digite nueva nota");
+                int.TryParse(Console.ReadLine(), out notas[indice]);
             }
         }
     }

@@ -16,8 +16,10 @@ namespace PracticaExamen
             {
                 Console.WriteLine("1 - Inicializar");
                 Console.WriteLine("2 - Incluir Estudiantes");
-                Console.WriteLine("3 - Reportes");
-                Console.WriteLine("4 - Salir");
+                Console.WriteLine("3 - Modificar Estudiante");
+                Console.WriteLine("4 - Consultar Esutdiante");
+                Console.WriteLine("5 - Reportes");
+                Console.WriteLine("6 - Salir");
                 int.TryParse(Console.ReadLine(), out opcion);
 
                 switch (opcion)
@@ -29,12 +31,18 @@ namespace PracticaExamen
                         ClsEstudiante.agregar();
                         break;
                     case 3:
+                        ClsEstudiante.modificar();
+                        break;
+                    case 4:
+                        ClsEstudiante.consultar();
+                        break;
+                    case 5:
                         submenu();
                         break;
-                    case 4: break;
+                    case 6: break;
                     default: break;
                 }
-            } while (opcion!=4);
+            } while (opcion!=5);
 
             
         }
