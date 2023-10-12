@@ -1,0 +1,8 @@
+C:\Users\Precision 5550s\OneDrive\Documents\practica-examen\PracticaExamen\bin\Debug\PracticaExamen.exe.config
+C:\Users\Precision 5550s\OneDrive\Documents\practica-examen\PracticaExamen\bin\Debug\PracticaExamen.exe
+C:\Users\Precision 5550s\OneDrive\Documents\practica-examen\PracticaExamen\bin\Debug\PracticaExamen.pdb
+C:\Users\Precision 5550s\OneDrive\Documents\practica-examen\PracticaExamen\obj\Debug\PracticaExamen.csproj.AssemblyReference.cache
+C:\Users\Precision 5550s\OneDrive\Documents\practica-examen\PracticaExamen\obj\Debug\PracticaExamen.csproj.SuggestedBindingRedirects.cache
+C:\Users\Precision 5550s\OneDrive\Documents\practica-examen\PracticaExamen\obj\Debug\PracticaExamen.csproj.CoreCompileInputs.cache
+C:\Users\Precision 5550s\OneDrive\Documents\practica-examen\PracticaExamen\obj\Debug\PracticaExamen.exe
+C:\Users\Precision 5550s\OneDrive\Documents\practica-examen\PracticaExamen\obj\Debug\PracticaExamen.pdb

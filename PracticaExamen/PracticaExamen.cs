@@ -10,6 +10,8 @@ namespace PracticaExamen
     {
         static void Main(string[] args)
         {
+            ClsMenu.desplegar();
+            Console.ReadLine();
         }
     }
 }
