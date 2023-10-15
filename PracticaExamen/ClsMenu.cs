@@ -18,8 +18,9 @@ namespace PracticaExamen
                 Console.WriteLine("2 - Incluir Estudiantes");
                 Console.WriteLine("3 - Consultar Estudiante");
                 Console.WriteLine("4 - Modificar Esutdiante");
-                Console.WriteLine("5 - Reportes");
-                Console.WriteLine("6 - Salir");
+                Console.WriteLine("5 - Eliminar Estudiante");
+                Console.WriteLine("6 - Reportes");
+                Console.WriteLine("7 - Salir");
                 int.TryParse(Console.ReadLine(), out opcion);
 
                 switch (opcion)
@@ -54,7 +55,7 @@ namespace PracticaExamen
         {
             do
             {
-                Console.WriteLine("1 - Reporte estudiante por condicion");
+                Console.WriteLine("1 - Reporte estudiantes por condicion");
                 Console.WriteLine("2 - Reporte general");
                 Console.WriteLine("3 - Salir");
                 int.TryParse(Console.ReadLine(), out opcion);
