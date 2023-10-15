@@ -14,10 +14,10 @@ namespace PracticaExamen
         {
             do
             {
-                Console.WriteLine("1 - Inicializar");
+                Console.WriteLine("1 - Inicializar Vectores");
                 Console.WriteLine("2 - Incluir Estudiantes");
-                Console.WriteLine("3 - Modificar Estudiante");
-                Console.WriteLine("4 - Consultar Esutdiante");
+                Console.WriteLine("3 - Consultar Estudiante");
+                Console.WriteLine("4 - Modificar Esutdiante");
                 Console.WriteLine("5 - Reportes");
                 Console.WriteLine("6 - Salir");
                 int.TryParse(Console.ReadLine(), out opcion);
@@ -31,18 +31,21 @@ namespace PracticaExamen
                         ClsEstudiante.agregar();
                         break;
                     case 3:
-                        ClsEstudiante.modificar();
-                        break;
-                    case 4:
                         ClsEstudiante.consultar();
                         break;
+                    case 4:
+                        ClsEstudiante.modificar();
+                        break;
                     case 5:
+                        ClsEstudiante.eliminar();
+                        break;
+                    case 6:
                         submenu();
                         break;
-                    case 6: break;
+                    case 7: break;
                     default: break;
                 }
-            } while (opcion!=5);
+            } while (opcion!=7);
 
             
         }
@@ -59,16 +62,46 @@ namespace PracticaExamen
                 switch (opcion)
                 {
                     case 1:
-                        Console.WriteLine("Reporte 1");
+                        submenuCondicion();
                         break;
                     case 2:
-                        Console.WriteLine("Reporte 2");
+                        ClsEstudiante.reportarTodos();
                         break;
                     case 3:
                         break;
                     default: break;
                 }
             } while (opcion != 3);
+        }
+
+        public static void submenuCondicion()
+        {
+            Console.Clear();
+            do
+            {
+                Console.WriteLine("1 - Aprobado");
+                Console.WriteLine("2 - Reprobado");
+                Console.WriteLine("3 - Aplazado");
+                int.TryParse(Console.ReadLine(), out opcion);
+
+                switch(opcion)
+                {
+                    case 1:
+                        Console.WriteLine("Aprobados");
+                        ClsEstudiante.reportePorCondicion("aprobado");
+                        break;
+                    case 2:
+                        Console.WriteLine("Reprobados");
+                        ClsEstudiante.reportePorCondicion("reprobado");
+                        break;
+                    case 3:
+                        Console.WriteLine("Aplazados");
+                        ClsEstudiante.reportePorCondicion("aplazado");
+                        break;
+                    default : break;
+                }
+            } while (opcion != 1 || opcion != 2 || opcion != 3);
+           
         }
     }
 }

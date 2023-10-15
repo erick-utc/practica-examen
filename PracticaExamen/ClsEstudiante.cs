@@ -97,5 +97,99 @@ namespace PracticaExamen
                 int.TryParse(Console.ReadLine(), out notas[indice]);
             }
         }
+
+        public static void eliminar()
+        {
+            int indice = buscar();
+            string[] newNombres = new string[cantidad];
+            string[] newCedulas = new string[cantidad];
+            int[] newNotas = new int[cantidad];
+
+            newCedulas = Enumerable.Repeat(string.Empty, cantidad).ToArray();
+            newNombres = Enumerable.Repeat(string.Empty, cantidad).ToArray();
+            newNotas = Enumerable.Repeat(0, cantidad).ToArray();
+
+            if (indice >= 0 )
+            {
+                for(int i = 0; i < cedulas.Length;  i++) 
+                {
+                    if(cedulas[i] != cedulas[indice])
+                    {
+                        newNombres[i] = nombres[i];
+                        newCedulas[i] = cedulas[i];
+                        newNotas[i] = notas[i];
+                    }
+                }
+
+                nombres = newNombres;
+                cedulas = newCedulas;
+                notas = newNotas;
+            }
+        }
+
+        public static void reportePorCondicion(string condicion)
+        {
+            switch (condicion)
+            {
+                case "aprobado":
+                    for (int i = 0; i < notas.Length; i++)
+                    {
+                        if (notas[i] > 70)
+                        {
+                            Console.WriteLine($"Cedula: {cedulas[i]}, Nombre: {nombres[i]}, Nota: {notas[i]}");
+                         }
+                    }
+                    break;
+                    
+                case "aplazado":
+                    for (int i = 0; i < notas.Length; i++)
+                    {
+                        if (notas[i] < 70 && notas[i] >= 60)
+                        {
+                            Console.WriteLine($"Cedula: {cedulas[i]}, Nombre: {nombres[i]}, Nota: {notas[i]}");
+                        }
+                    }
+                    break;
+                case "reprobado":
+                    for (int i = 0; i < notas.Length; i++)
+                    {
+                        if (notas[i] < 60)
+                        {
+                            Console.WriteLine($"Cedula: {cedulas[i]}, Nombre: {nombres[i]}, Nota: {notas[i]}");
+                        }
+                    }
+                    break;
+                default:
+                    Console.WriteLine("No existe la condicion");
+                    break;
+            }
+        }
+
+        public static void reportarTodos()
+        {
+            for (int i = 0;i < notas.Length;i++)
+            {
+                Console.WriteLine("======================================================================================================");
+                Console.WriteLine($"Cedula: {cedulas[i]} Nombres: {nombres[i]} Promedio: {notas[i]} Condicion: {condicion(notas[i])}");
+            }
+
+            Console.WriteLine("======================================================================================================");
+
+        }
+
+        public static string condicion(int nota)
+        {
+            string condicion = "Reprobado";
+
+            if(nota >= 70)
+            {
+                condicion = "Aprobado";
+            }else if (nota >= 60)
+            {
+                condicion = "Aplazado";
+            }
+
+            return condicion;
+        }
     }
 }
