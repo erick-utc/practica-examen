@@ -53,26 +53,23 @@ namespace PracticaExamen
 
         public static void submenu()
         {
-            do
-            {
-                Console.WriteLine("1 - Reporte estudiantes por condicion");
-                Console.WriteLine("2 - Reporte general");
-                Console.WriteLine("3 - Salir");
-                int.TryParse(Console.ReadLine(), out opcion);
+            Console.WriteLine("1 - Reporte estudiantes por condicion");
+            Console.WriteLine("2 - Reporte general");
+            Console.WriteLine("3 - Salir");
+            int.TryParse(Console.ReadLine(), out opcion);
 
-                switch (opcion)
-                {
-                    case 1:
-                        submenuCondicion();
-                        break;
-                    case 2:
-                        ClsEstudiante.reportarTodos();
-                        break;
-                    case 3:
-                        break;
-                    default: break;
-                }
-            } while (opcion != 3);
+            switch (opcion)
+            {
+                case 1:
+                    submenuCondicion();
+                    break;
+                case 2:
+                    ClsEstudiante.reportarTodos();
+                    break;
+                case 3:
+                    break;
+                default: break;
+            }
         }
 
         public static void submenuCondicion()
