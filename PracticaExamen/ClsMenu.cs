@@ -53,52 +53,52 @@ namespace PracticaExamen
 
         public static void submenu()
         {
-            Console.WriteLine("1 - Reporte estudiantes por condicion");
-            Console.WriteLine("2 - Reporte general");
-            Console.WriteLine("3 - Salir");
-            int.TryParse(Console.ReadLine(), out opcion);
-
-            switch (opcion)
+            do
             {
-                case 1:
-                    submenuCondicion();
-                    break;
-                case 2:
-                    ClsEstudiante.reportarTodos();
-                    break;
-                case 3:
-                    break;
-                default: break;
-            }
+                Console.WriteLine("1 - Reporte estudiantes por condicion");
+                Console.WriteLine("2 - Reporte general");
+                Console.WriteLine("3 - Salir");
+                int.TryParse(Console.ReadLine(), out opcion);
+
+                switch (opcion)
+                {
+                    case 1:
+                        submenuCondicion();
+                        break;
+                    case 2:
+                        ClsEstudiante.reportarTodos();
+                        break;
+                    case 3:
+                        break;
+                    default: break;
+                }
+            } while (opcion != 3);
         }
 
         public static void submenuCondicion()
         {
             Console.Clear();
-            do
-            {
-                Console.WriteLine("1 - Aprobado");
-                Console.WriteLine("2 - Reprobado");
-                Console.WriteLine("3 - Aplazado");
-                int.TryParse(Console.ReadLine(), out opcion);
+            Console.WriteLine("1 - Aprobado");
+            Console.WriteLine("2 - Reprobado");
+            Console.WriteLine("3 - Aplazado");
+            int.TryParse(Console.ReadLine(), out opcion);
 
-                switch(opcion)
-                {
-                    case 1:
-                        Console.WriteLine("Aprobados");
-                        ClsEstudiante.reportePorCondicion("aprobado");
-                        break;
-                    case 2:
-                        Console.WriteLine("Reprobados");
-                        ClsEstudiante.reportePorCondicion("reprobado");
-                        break;
-                    case 3:
-                        Console.WriteLine("Aplazados");
-                        ClsEstudiante.reportePorCondicion("aplazado");
-                        break;
-                    default : break;
-                }
-            } while (opcion != 1 || opcion != 2 || opcion != 3);
+            switch(opcion)
+            {
+                case 1:
+                    Console.WriteLine("Aprobados");
+                    ClsEstudiante.reportePorCondicion("aprobado");
+                    break;
+                case 2:
+                    Console.WriteLine("Reprobados");
+                    ClsEstudiante.reportePorCondicion("reprobado");
+                    break;
+                case 3:
+                    Console.WriteLine("Aplazados");
+                    ClsEstudiante.reportePorCondicion("aplazado");
+                    break;
+                default : break;
+            }
            
         }
     }

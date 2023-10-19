@@ -9,7 +9,7 @@ namespace PracticaExamen
     internal class ClsEstudiante
     {
         //atributos
-        static int cantidad = 10;
+        static int cantidad = 1;
         static public string[] cedulas = new string[cantidad];
         static public string[] nombres = new string[cantidad];
         static public int[] notas = new int[cantidad];
